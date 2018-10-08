@@ -1,5 +1,5 @@
 # SumoPontifice-Software
-Software utilizado en la realización del proyecto Robor-Sumo
+Software utilizado en la realización del proyecto Robot-Sumo
 
 # Prerrequisitos
 Este proyecto se realizó en un ambiente de Anaconda 4.3.30  nombrado como SumoSoftware
