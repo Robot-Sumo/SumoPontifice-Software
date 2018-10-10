@@ -4,14 +4,6 @@ import os
 
 
 #Variables globales
-step1 = phi_0-97 # 90 grados
-step2 = theta_0-57 # 45 grados
-phi_start = phi_0
-phi_end = phi_180
-theta_start = theta_0
-theta_end = theta_90
-Ultra_data = 0
-Infra_data = 0
 ip_ESP8266 = "0.0.0.0"
 ip_client1 = "0.0.0.0"
 system_state = "ESP" # Sistema empieza en estado FREERUN
