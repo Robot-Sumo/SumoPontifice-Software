@@ -1,0 +1,343 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+
+<meta name="google-site-verification" content="CjkdY6BqKWAVmQ78_iSq6J7ZZ9AoL7-CjFVBYGg9FU4">
+<link rel="shortcut icon" href="http://wiki.ros.org/custom/favicon.ico" type="image/ico">
+<link rel="stylesheet" href="ps3joy_Troubleshooting%20-%20ROS%20Wiki_files/bootstrap.css">
+<script src="ps3joy_Troubleshooting%20-%20ROS%20Wiki_files/nr-1099.js"></script><script type="text/javascript" async="" src="ps3joy_Troubleshooting%20-%20ROS%20Wiki_files/ga.js"></script><script src="ps3joy_Troubleshooting%20-%20ROS%20Wiki_files/jquery-1.js"></script>
+<script src="ps3joy_Troubleshooting%20-%20ROS%20Wiki_files/bootstrap.js"></script>
+<script type="text/javascript" src="ps3joy_Troubleshooting%20-%20ROS%20Wiki_files/sorttable.js"></script>
+<script type="text/javascript" src="ps3joy_Troubleshooting%20-%20ROS%20Wiki_files/jquery.js"></script>                         
+<script type="text/javascript" src="ps3joy_Troubleshooting%20-%20ROS%20Wiki_files/seesaw.js"></script> 
+<script type="text/javascript" src="ps3joy_Troubleshooting%20-%20ROS%20Wiki_files/rosversion.js"></script> 
+<!--script type="text/javascript" src="/custom/libraries/RGraph.common.core.js" ></script Used for metrics only, should be conditional, not at the top-->
+<!--script type="text/javascript" src="/custom/libraries/RGraph.bar.js" ></script same as above -->
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-17821189-2']);
+  _gaq.push(['_setDomainName', 'wiki.ros.org']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1099.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"4c8610d177","agent":"","transactionName":"NFZaMEVUV0ZVBkBeCQ0cbRZeGklGBw9bTklJ","applicationID":"3371695","errorBeacon":"bam.nr-data.net","applicationTime":143}</script>
+<meta name="robots" content="index,nofollow">
+
+<title>ps3joy/Troubleshooting - ROS Wiki</title>
+<script type="text/javascript" src="ps3joy_Troubleshooting%20-%20ROS%20Wiki_files/common.js"></script>
+
+<script type="text/javascript">
+<!--
+var search_hint = "Search";
+//-->
+</script>
+
+
+<link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="ps3joy_Troubleshooting%20-%20ROS%20Wiki_files/common.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="screen" href="ps3joy_Troubleshooting%20-%20ROS%20Wiki_files/screen.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="print" href="ps3joy_Troubleshooting%20-%20ROS%20Wiki_files/print.css">
+<link rel="stylesheet" type="text/css" charset="utf-8" media="projection" href="ps3joy_Troubleshooting%20-%20ROS%20Wiki_files/projection.css">
+
+<!-- css only for MS IE6/IE7 browsers -->
+<!--[if lt IE 8]>
+   <link rel="stylesheet" type="text/css" charset="utf-8" media="all" href="/moin_static197/rostheme/css/msie.css">
+<![endif]-->
+
+
+
+
+<link rel="canonical" href="http://wiki.ros.org/ps3joy/Troubleshooting">
+
+<link rel="Start" href="http://wiki.ros.org/Documentation">
+<link rel="Alternate" title="Wiki Markup" href="http://wiki.ros.org/ps3joy/Troubleshooting?action=raw">
+<link rel="Alternate" media="print" title="Print View" href="http://wiki.ros.org/ps3joy/Troubleshooting?action=print">
+<link rel="Up" href="http://wiki.ros.org/ps3joy">
+<link rel="Search" href="http://wiki.ros.org/FindPage">
+<link rel="Index" href="http://wiki.ros.org/TitleIndex">
+<link rel="Glossary" href="http://wiki.ros.org/WordIndex">
+<link rel="Help" href="http://wiki.ros.org/HelpOnFormatting">
+</head>
+
+<body dir="ltr" lang="en">
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="ps3joy_Troubleshooting%20-%20ROS%20Wiki_files/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-5950817-2");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+<script type="text/javascript">
+<!--// Initialize search form
+var f = document.getElementById('searchform');
+if(f) f.getElementsByTagName('label')[0].style.display = 'none';
+var e = document.getElementById('searchinput');
+if(e) {
+  searchChange(e);
+  searchBlur(e);
+}
+
+function handleSubmit() {
+  var f = document.getElementById('searchform');
+  var t = document.getElementById('searchinput');
+  var r = document.getElementById('real_searchinput');
+
+  //alert("handleSubmit "+ t.value);
+  if(t.value.match(/review/)) {
+    r.value = t.value;
+  } else {
+    //r.value = t.value + " -PackageReviewCategory -StackReviewCategory -M3Review -DocReview -ApiReview -HelpOn -BadContent -LocalSpellingWords";
+    r.value = t.value + " -PackageReviewCategory -StackReviewCategory -DocReview -ApiReview";
+  }
+  //return validate(f);
+}
+//-->
+</script>
+
+<div id="dpage">
+  <div id="dpage-inner">
+    <div id="header"><div id="topnav">
+
+<!-- Alert box -->
+<!-- To enable/disable the alert box, uncomment/comment the block below and update the content below the button. -->
+<!--
+    <div class="alert alert-info alert-dismissable" style="text-align: center;">
+<script>
+jQuery(function( $ ){
+    alert_box_name = 'roswiki_roscon'
+    state = localStorage.getItem(alert_box_name);
+    if (!state) {
+      localStorage.setItem(alert_box_name, 'open');
+    }
+    state = localStorage.getItem(alert_box_name);
+    if (state == 'closed') {
+        $( '#topnav .alert' ).hide();
+    }
+    $( '.close' ).click(function () {
+	console.log('in .close.click');
+        localStorage.setItem(alert_box_name, 'closed');
+        $( '#topnav .alert' ).hide();
+  });
+});
+</script>
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <a href="http://roscon.ros.org">ROSCon 2017</a> will be in Vancouver, September 21-22! <br>
+      The last few years have sold out: register now and take advantage of discounted hotel rates</a>.
+    </div>
+-->
+<!-- End Alert box -->
+
+      <table id="topnav-table">
+        <tbody><tr>
+          <td width="300" valign="top"><a href="http://wiki.ros.org/"><img src="ps3joy_Troubleshooting%20-%20ROS%20Wiki_files/ros_org.png" alt="ros.org" width="238" height="51" border="0"></a></td>
+          <td width="500" valign="middle">
+            <a href="http://www.ros.org/about-ros">About</a>
+            |
+            <a href="http://wiki.ros.org/Support">Support</a>
+            |
+            <a href="http://discourse.ros.org/">Discussion Forum</a>
+            |
+            <a href="http://status.ros.org/">Service Status</a>
+            |
+            <a href="http://answers.ros.org/">Q&amp;A answers.ros.org</a>
+
+<!--<a href="http://roscon.ros.org/2016/"><img align="middle" style="padding-left: 15px;" src="http://ros.org/images/roscon_wiki_header.jpg" width="133" height="65" alt="ROSCon 2016" /></a>
+-->
+
+<!-- <a href="https://events.osrfoundation.org/ros-kong-2014/"><img align="middle" style="padding-left: 15px;" src="http://ros.org/images/ros_kong_2014_badge.png" width="133" height="38" alt="roskong" /></a>
+-->
+<!--a href="https://events.osrfoundation.org/ros-kong-2014/"><img align="middle" style="padding-left: 15px;" src="http://imgur.com/eMzUJVe.png" width="133" height="38" alt="roskong" /></a-->
+          </td>
+
+          <td valign="middle" align="right">
+
+<script language="Javascript">
+
+function Searchy(theButton){
+
+theForm = theButton.form;
+newID = theForm.input.value;
+theForm.q.value = newID;
+theForm.input.value=theForm.input.value
+
+}
+</script>
+
+
+<form action="http://www.ros.org/search/index.html" id="cse">
+  <div>
+    <label>Search:</label>
+    <input name="cx" value="018259903093183594226:txvzw9fat6w" type="hidden">
+    <input name="cof" value="FORID:11;NB:1" type="hidden">
+    <input name="filter" value="0" type="hidden">
+    <input name="num" value="10" type="hidden">
+
+    <input name="ie" value="UTF-8" type="hidden">
+    <input name="input" id="input" autocomplete="on" style="width: 35%" type="text">
+    <input name="q" value="" type="hidden">
+    <input name="sa" value="Submit" onclick="Searchy(this)" type="submit">
+
+  </div>
+</form>
+
+         </td>
+      </tr>
+      <tr>
+        <td colspan="3" width="1024" height="53"><nobr><img src="ps3joy_Troubleshooting%20-%20ROS%20Wiki_files/menu_left.png" alt="" width="17" height="53"><a href="http://wiki.ros.org/"><img src="ps3joy_Troubleshooting%20-%20ROS%20Wiki_files/menu_documentation.png" alt="Documentation" width="237" height="53" border="0"></a><img src="ps3joy_Troubleshooting%20-%20ROS%20Wiki_files/menu_spacer.png" width="69" height="53"><a href="http://www.ros.org/browse/"><img src="ps3joy_Troubleshooting%20-%20ROS%20Wiki_files/menu_browse_software.png" alt="Browse Software" width="268" height="53" border="0"></a><img src="ps3joy_Troubleshooting%20-%20ROS%20Wiki_files/menu_spacer.png" width="69" height="53"><a href="http://www.ros.org/news"><img src="ps3joy_Troubleshooting%20-%20ROS%20Wiki_files/menu_news.png" alt="News" width="84" height="53" border="0"></a><img src="ps3joy_Troubleshooting%20-%20ROS%20Wiki_files/menu_spacer.png" width="69" height="53"><a href="http://wiki.ros.org/ROS/Installation"><img src="ps3joy_Troubleshooting%20-%20ROS%20Wiki_files/menu_download.png" alt="Download" width="151" height="53" border="0"></a><img src="ps3joy_Troubleshooting%20-%20ROS%20Wiki_files/menu_right.png" width="60" height="53"></nobr></td>
+
+      </tr>
+    </tbody></table> <!-- topnav-table -->
+
+    </div> <!-- /#topav -->
+  </div> <!-- /#header -->
+
+
+<div id="header2">
+
+<ul id="pagelocation">
+<li><a href="http://wiki.ros.org/ps3joy">ps3joy</a></li><li><a class="backlink" href="http://wiki.ros.org/action/fullsearch/ps3joy/Troubleshooting?action=fullsearch&amp;context=180&amp;value=linkto%3A%22ps3joy%2FTroubleshooting%22" rel="nofollow" title="Click to do a full-text search for this title">Troubleshooting</a></li>
+</ul>
+
+<div id="locationline">
+</div>
+</div>
+
+<div id="sidebar">
+<div class="sidepanel">
+<h1>Wiki</h1>
+
+<ul id="navibar">
+<li class="wikilink"><a href="http://wiki.ros.org/Distributions">Distributions</a></li><li class="wikilink"><a href="http://wiki.ros.org/ROS/Installation">ROS/Installation</a></li><li class="wikilink"><a href="http://wiki.ros.org/ROS/Tutorials">ROS/Tutorials</a></li><li class="wikilink"><a href="http://wiki.ros.org/RecentChanges">RecentChanges</a></li><li class="current"><a href="http://wiki.ros.org/ps3joy/Troubleshooting">ps3joy/Troubleshooting</a></li>
+</ul>
+
+</div>
+<div class="sidepanel">
+<h1>Page</h1>
+<ul class="editbar"><li><span class="disabled">Immutable Page</span></li><li class="toggleCommentsButton" style="display:none;"><a href="#" class="nbcomment" onclick="toggleComments();return false;">Comments</a></li><li><a class="nbinfo" href="http://wiki.ros.org/action/info/ps3joy/Troubleshooting?action=info" rel="nofollow">Info</a></li><li><a class="nbattachments" href="http://wiki.ros.org/action/AttachFile/ps3joy/Troubleshooting?action=AttachFile" rel="nofollow">Attachments</a></li><li>
+<form class="actionsmenu" method="GET" action="/ps3joy/Troubleshooting">
+<div>
+    
+    <select name="action" onchange="if ((this.selectedIndex != 0) &amp;&amp;
+                      (this.options[this.selectedIndex].disabled == false)) {
+                this.form.submit();
+            }
+            this.selectedIndex = 0;">
+        <option value="show" selected="selected">More Actions:</option><option value="raw">Raw Text</option>
+<option value="print">Print View</option>
+<option value="RenderAsDocbook">Render as Docbook</option>
+<option value="show" disabled="disabled" class="disabled">Delete Cache</option>
+<option value="show" disabled="disabled" class="disabled">------------------------</option>
+<option value="SpellCheck">Check Spelling</option>
+<option value="LikePages">Like Pages</option>
+<option value="LocalSiteMap">Local Site Map</option>
+<option value="show" disabled="disabled" class="disabled">------------------------</option>
+<option value="RenamePage" disabled="disabled" class="disabled">Rename Page</option>
+<option value="CopyPage">Copy Page</option>
+<option value="DeletePage" disabled="disabled" class="disabled">Delete Page</option>
+<option value="show" disabled="disabled" class="disabled">------------------------</option>
+<option value="MyPages">My Pages</option>
+<option value="show" disabled="disabled" class="disabled">Subscribe User</option>
+<option value="show" disabled="disabled" class="disabled">------------------------</option>
+<option value="show" disabled="disabled" class="disabled">Remove Spam</option>
+<option value="show" disabled="disabled" class="disabled">Revert to this revision</option>
+<option value="PackagePages">Package Pages</option>
+<option value="SyncPages">Sync Pages</option>
+<option value="show" disabled="disabled" class="disabled">------------------------</option>
+<option value="CreatePdfDocument">CreatePdfDocument</option>
+<option value="Load">Load</option>
+<option value="RawFile">RawFile</option>
+<option value="Save">Save</option>
+<option value="SlideShow">SlideShow</option>
+    </select>
+    
+    
+</div>
+<script type="text/javascript">
+<!--// Init menu
+actionsMenuInit('More Actions:');
+//-->
+</script>
+</form>
+</li></ul>
+
+</div>
+<div class="sidepanel">
+<h1>User</h1>
+<ul id="username"><li><a href="http://wiki.ros.org/action/login/ps3joy/Troubleshooting?action=login" id="login" rel="nofollow">Login</a></li></ul>
+</div>
+</div>
+
+<div id="page" dir="ltr" lang="en">
+
+<div dir="ltr" id="content" lang="en"><span class="anchor" id="top"></span>
+<span class="anchor" id="line-1"></span><span class="anchor" id="line-2"></span><span class="anchor" id="line-3"></span><span class="anchor" id="line-4"></span><span class="anchor" id="line-5"></span><p class="line867"></p><div class="table-of-contents"><p class="table-of-contents-heading">Contents</p><ol><li>
+<a href="#Errors_when_using_ps3joy">Errors when using ps3joy</a></li><li>
+<a href="#Error:_Won.27t_run_in_Karmic.">Error: Won't run in Karmic.</a></li><li>
+<a href="#Error:_Won.27t_connect_in_Karmic.">Error: Won't connect in Karmic.</a><ol><li>
+<a href="#Error:_usb_claim_interface:_Operation_not_permitted">Error: usb_claim_interface: Operation not permitted</a></li><li>
+<a href="#Error:_No_controller_found_on_USB_busses.">Error: No controller found on USB busses.</a></li><li>
+<a href="#Error:_Unable_to_retrieve_local_bd_addr_from_.60hcitool_dev.60">Error: Unable to retrieve local bd_addr from `hcitool dev`</a></li></ol></li></ol></div><p class="line874"> <span class="anchor" id="line-6"></span><span class="anchor" id="line-7"></span></p><p class="line867">
+</p><h2 id="Errors_when_using_ps3joy">Errors when using ps3joy</h2>
+<span class="anchor" id="line-8"></span><span class="anchor" id="line-9"></span><p class="line867">
+</p><h2 id="Error:_Won.27t_run_in_Karmic.">Error: Won't run in Karmic.</h2>
+<span class="anchor" id="line-10"></span><p class="line867"><span class="anchor" id="line-11"></span><span class="anchor" id="line-12"></span><span class="anchor" id="line-13"></span><span class="anchor" id="line-14"></span></p><pre><span class="anchor" id="line-1-1"></span>$ sudo ./ps3joy.py 
+<span class="anchor" id="line-2-1"></span>No inactivity timeout was set. (Run with --help for details.)
+<span class="anchor" id="line-3-1"></span>Error binding to socket. Do you have another ps3joy.py running? This error occurs on some distributions (such as Ubuntu Karmic). Please read http://www.ros.org/wiki/ps3joy/Troubleshooting for solutions.</pre><span class="anchor" id="line-15"></span><ul><li>You need python-bluez version 0.18, and you need to disable automatic loading of bluetoothd. <span class="anchor" id="line-16"></span><ul><li style="list-style-type:none"><p class="line862">Follow the <a href="http://wiki.ros.org/ps3joy/KarmicInstructions">instructions to configure your system to run ps3joy.py in Karmic</a>. <span class="anchor" id="line-17"></span><span class="anchor" id="line-18"></span></p></li></ul></li></ul><p class="line867">
+</p><h2 id="Error:_Won.27t_connect_in_Karmic.">Error: Won't connect in Karmic.</h2>
+<span class="anchor" id="line-19"></span><p class="line874">The driver says it is waiting for a connection, but no connection happens. Gnome pairing dialog boxes might also be popping up. <span class="anchor" id="line-20"></span><strong>Solution: </strong>  <span class="anchor" id="line-21"></span></p><ul><li><p class="line862">Is <tt class="backtick">bluetoothd</tt> running?<span class="anchor" id="line-22"></span><span class="anchor" id="line-23"></span></p><pre><span class="anchor" id="line-1-2"></span>$ ps ax|grep bluetoothd</pre><span class="anchor" id="line-24"></span><ul><li style="list-style-type:none"><p class="line862">Follow the <a href="http://wiki.ros.org/ps3joy/KarmicInstructions#udev">instructions to disable automatic bluetoothd loading</a>. <span class="anchor" id="line-25"></span><span class="anchor" id="line-26"></span></p></li></ul></li></ul><p class="line867">
+</p><h3 id="Error:_usb_claim_interface:_Operation_not_permitted">Error: usb_claim_interface: Operation not permitted</h3>
+<span class="anchor" id="line-27"></span><ul><li style="list-style-type:none"><span class="anchor" id="line-28"></span><span class="anchor" id="line-29"></span><span class="anchor" id="line-30"></span><pre><span class="anchor" id="line-1-3"></span>$ rosrun ps3joy sixpair 
+<span class="anchor" id="line-2-2"></span>usb_claim_interface: Operation not permitted</pre><span class="anchor" id="line-31"></span><span class="anchor" id="line-32"></span></li></ul><p class="line867"><strong>Solution: </strong>  <span class="anchor" id="line-33"></span></p><ul><li>Are you running as root? <span class="anchor" id="line-34"></span><span class="anchor" id="line-35"></span><span class="anchor" id="line-36"></span><pre><span class="anchor" id="line-1-4"></span>$ sudo bash</pre><span class="anchor" id="line-37"></span><span class="anchor" id="line-38"></span></li></ul><p class="line867">
+</p><h3 id="Error:_No_controller_found_on_USB_busses.">Error: No controller found on USB busses.</h3>
+<span class="anchor" id="line-39"></span><ul><li style="list-style-type:none"><span class="anchor" id="line-40"></span><span class="anchor" id="line-41"></span><span class="anchor" id="line-42"></span><pre><span class="anchor" id="line-1-5"></span>$ rosrun ps3joy sixpair 
+<span class="anchor" id="line-2-3"></span>No controller found on USB busses.</pre><span class="anchor" id="line-43"></span><span class="anchor" id="line-44"></span></li></ul><p class="line867"><strong>Solution: </strong>  <span class="anchor" id="line-45"></span></p><ul><li>Is the joystick plugged in via USB? <span class="anchor" id="line-46"></span><span class="anchor" id="line-47"></span><span class="anchor" id="line-48"></span><span class="anchor" id="line-49"></span></li></ul><p class="line867">
+</p><h3 id="Error:_Unable_to_retrieve_local_bd_addr_from_.60hcitool_dev.60">Error: Unable to retrieve local bd_addr from `hcitool dev`</h3>
+<span class="anchor" id="line-50"></span><span class="anchor" id="line-51"></span><ul><li style="list-style-type:none"><span class="anchor" id="line-52"></span><span class="anchor" id="line-53"></span><span class="anchor" id="line-54"></span><span class="anchor" id="line-55"></span><span class="anchor" id="line-56"></span><pre><span class="anchor" id="line-1-6"></span>rosrun ps3joy sixpair 
+<span class="anchor" id="line-2-4"></span>Current Bluetooth master: 00:22:b0:d0:5a:09
+<span class="anchor" id="line-3-2"></span>Unable to retrieve local bd_addr from `hcitool dev`.
+<span class="anchor" id="line-4-1"></span>Please enable Bluetooth or specify an address manually.</pre><span class="anchor" id="line-57"></span><span class="anchor" id="line-58"></span></li></ul><p class="line867"><strong>Solution: </strong>  <span class="anchor" id="line-59"></span></p><ul><li>Is the USB interface up and running? <span class="anchor" id="line-60"></span><span class="anchor" id="line-61"></span><span class="anchor" id="line-62"></span><span class="anchor" id="line-63"></span><span class="anchor" id="line-64"></span><span class="anchor" id="line-65"></span><span class="anchor" id="line-66"></span><span class="anchor" id="line-67"></span><pre><span class="anchor" id="line-1-7"></span>$ sudo hciconfig hci0 
+<span class="anchor" id="line-2-5"></span>hci0:   Type: USB
+<span class="anchor" id="line-3-3"></span>        BD Address: 00:22:B0:D0:5A:09 ACL MTU: 384:8 SCO MTU: 64:8
+<span class="anchor" id="line-4-2"></span>        DOWN 
+<span class="anchor" id="line-5-1"></span>        RX bytes:1068796 acl:18423 sco:0 events:70 errors:0
+<span class="anchor" id="line-6-1"></span>        TX bytes:496 acl:20 sco:0 commands:33 errors:0</pre><span class="anchor" id="line-68"></span><span class="anchor" id="line-69"></span>If the interface says DOWN: <span class="anchor" id="line-70"></span><span class="anchor" id="line-71"></span><span class="anchor" id="line-72"></span><pre><span class="anchor" id="line-1-8"></span>$ sudo hciconfig hci0 up</pre><span class="anchor" id="line-73"></span>Then: <span class="anchor" id="line-74"></span><span class="anchor" id="line-75"></span><span class="anchor" id="line-76"></span><span class="anchor" id="line-77"></span><span class="anchor" id="line-78"></span><span class="anchor" id="line-79"></span><span class="anchor" id="line-80"></span><span class="anchor" id="line-81"></span><pre><span class="anchor" id="line-1-9"></span>$ sudo hciconfig hci0 
+<span class="anchor" id="line-2-6"></span>hci0:   Type: USB
+<span class="anchor" id="line-3-4"></span>        BD Address: 00:22:B0:D0:5A:09 ACL MTU: 384:8 SCO MTU: 64:8
+<span class="anchor" id="line-4-3"></span>        UP RUNNING 
+<span class="anchor" id="line-5-2"></span>        RX bytes:1069138 acl:18423 sco:0 events:80 errors:0
+<span class="anchor" id="line-6-2"></span>        TX bytes:531 acl:20 sco:0 commands:43 errors:0</pre><span class="anchor" id="line-82"></span><span class="anchor" id="line-83"></span></li><li class="gap">Does the interface need to be reset? <span class="anchor" id="line-84"></span><span class="anchor" id="line-85"></span><span class="anchor" id="line-86"></span><pre><span class="anchor" id="line-1-10"></span>$ sudo hciconfig hci0 reset</pre><span class="anchor" id="line-87"></span><span class="anchor" id="line-88"></span></li><li class="gap">None of theses solutions work? <span class="anchor" id="line-89"></span><p class="line862">Try this resource for bluetooth programming <a class="http" href="http://people.csail.mit.edu/rudolph/Teaching/Articles/PartOfBTBook.pdf">http://people.csail.mit.edu/rudolph/Teaching/Articles/PartOfBTBook.pdf</a> <span class="anchor" id="line-90"></span></p></li></ul><span class="anchor" id="bottom"></span></div></div>
+<div id="pagebottom"></div>
+</div>
+
+<p id="pageinfo" class="info" dir="ltr" lang="en">Wiki: ps3joy/Troubleshooting  (last edited 2010-02-01 20:24:31 by <span title="BlaiseGassend @ bcn.willowgarage.com[10.0.0.127]"><a class="nonexistent" href="http://wiki.ros.org/BlaiseGassend" title="BlaiseGassend @ bcn.willowgarage.com[10.0.0.127]">BlaiseGassend</a></span>)</p>
+
+
+
+
+<div style="margin-top: 9px;" class="footer">
+Except where otherwise noted, the ROS wiki is licensed under the <br><a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0</a> | <a href="https://plus.google.com/113789706402978299308" rel="publisher">Find us on Google+</a>
+<hr style="margin-top: 10px;">
+<div class="row">
+  <div class="col-md-4 col-md-offset-4">
+<a href="http://www.osrfoundation.org/"><img style="margin-top: -1px;" src="ps3joy_Troubleshooting%20-%20ROS%20Wiki_files/brought_by_horiz.png"><p></p></a>
+  </div>
+</div>
+</div>
+
+  </div> <!-- /#dpage-inner, /#dpage -->
+
+
+
+
+
+</body></html>

@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class=" js flexbox canvas canvastext webgl touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths" style="" lang="en"><!--<![endif]--><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Configuring Playstation 3 Controllers — Triangula 0.3.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+      <link rel="search" type="application/opensearchdescription+xml" title="Search within Triangula 0.3.1 documentation" href="https://pythonhosted.org/triangula/_static/opensearch.xml">
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="Configuring%20Playstation%203%20Controllers%20%E2%80%94%20Triangula%200.3.1%20documentation_files/theme.css" type="text/css">
+  
+
+  
+    <link rel="stylesheet" href="Configuring%20Playstation%203%20Controllers%20%E2%80%94%20Triangula%200.3.1%20documentation_files/theme_overrides.css" type="text/css">
+  
+
+  
+    <link rel="top" title="Triangula 0.3.1 documentation" href="https://pythonhosted.org/triangula/index.html">
+        <link rel="next" title="API Documentation" href="https://pythonhosted.org/triangula/api.html">
+        <link rel="prev" title="Raspberry Pi Configuration" href="https://pythonhosted.org/triangula/config.html"> 
+
+  
+  <script src="Configuring%20Playstation%203%20Controllers%20%E2%80%94%20Triangula%200.3.1%20documentation_files/modernizr.js"></script>
+
+<style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1px; bottom: 2px; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+
+<body class="wy-body-for-nav" role="document"><div id="MathJax_Message" style="display: none;"></div>
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="https://pythonhosted.org/triangula/index.html" class="icon icon-home"> Triangula
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input name="q" placeholder="Search docs" type="text">
+    <input name="check_keywords" value="yes" type="hidden">
+    <input name="area" value="default" type="hidden">
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="https://pythonhosted.org/triangula/config.html">Raspberry Pi Configuration</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href=""><span class="toctree-expand"></span>Configuring Playstation 3 Controllers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#a-note-on-pairing">A note on pairing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hardware"><span class="toctree-expand"></span>Hardware</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#bluetooth-dongles">Bluetooth dongles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#software">Software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pairing">Pairing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#accessing-the-sixaxis-from-python">Accessing the SixAxis from Python</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="https://pythonhosted.org/triangula/api.html"><span class="toctree-expand"></span>API Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="https://pythonhosted.org/triangula/api/arduino.html"><span class="toctree-expand"></span>triangula.arduino: Controlling the Arduino</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="https://pythonhosted.org/triangula/api/arduino.html#python-code">Python Code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://pythonhosted.org/triangula/api/arduino.html#arduino-code"><span class="toctree-expand"></span>Arduino Code</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="https://pythonhosted.org/triangula/api/arduino.html#triangula-neopixel">Triangula_NeoPixel</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="https://pythonhosted.org/triangula/api/chassis.html"><span class="toctree-expand"></span>triangula.chassis: Kinematics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="https://pythonhosted.org/triangula/api/chassis.html#basics">Basics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://pythonhosted.org/triangula/api/chassis.html#defining-the-chassis">Defining the Chassis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://pythonhosted.org/triangula/api/chassis.html#location-awareness">Location Awareness</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="https://pythonhosted.org/triangula/api/dynamics.html"><span class="toctree-expand"></span>triangula.dynamics: High Level Dynamics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="https://pythonhosted.org/triangula/api/dynamics.html#per-wheel-acceleration-limiting">Per-Wheel Acceleration Limiting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://pythonhosted.org/triangula/api/dynamics.html#motion-limiting">Motion Limiting</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="https://pythonhosted.org/triangula/api/input.html"><span class="toctree-expand"></span>triangula.input: PlayStation3 Controller Support</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="https://pythonhosted.org/triangula/api/input.html#handling-buttons">Handling Buttons</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="https://pythonhosted.org/triangula/api/lcd.html">triangula.lcd: Serial LCD Display Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://pythonhosted.org/triangula/api/navigation.html"><span class="toctree-expand"></span>triangula.navigation: Navigation and Routing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="https://pythonhosted.org/triangula/api/navigation.html#waypoints">Waypoints</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="https://pythonhosted.org/triangula/api/task_framework.html">triangula.task: Task Management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://pythonhosted.org/triangula/api/tasks.html"><span class="toctree-expand"></span>triangula.tasks.*: Task Implementations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="https://pythonhosted.org/triangula/api/tasks.html#triangula-tasks-main-menu-main-menu">triangula.tasks.main_menu: Main Menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://pythonhosted.org/triangula/api/tasks.html#triangula-tasks-manual-control-manual-control">triangula.tasks.manual_control: Manual Control</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://pythonhosted.org/triangula/api/tasks.html#triangula-tasks-patrol-patrol">triangula.tasks.patrol: Patrol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://pythonhosted.org/triangula/api/tasks.html#triangula-tasks-network-info-network-info">triangula.tasks.network_info: Network Info</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://pythonhosted.org/triangula/api/tasks.html#triangula-tasks-compass-test-compass-test">triangula.tasks.compass_test: Compass Test</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="https://pythonhosted.org/triangula/api/util.html"><span class="toctree-expand"></span>triangula.util: Helpful Things</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="https://pythonhosted.org/triangula/api/util.html#using-intervalcheck">Using IntervalCheck</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="https://pythonhosted.org/triangula/maths.html"><span class="toctree-expand"></span>Kinematics - Maths</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="https://pythonhosted.org/triangula/maths.html#motion-at-a-point"><span class="toctree-expand"></span>Motion at a point</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="https://pythonhosted.org/triangula/maths.html#speed">Speed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://pythonhosted.org/triangula/maths.html#direction">Direction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://pythonhosted.org/triangula/maths.html#velocity-from-rotation">Velocity from Rotation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="https://pythonhosted.org/triangula/maths.html#final-velocity">Final Velocity</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="https://pythonhosted.org/triangula/maths.html#wheel-speed-for-velocity">Wheel Speed for Velocity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://pythonhosted.org/triangula/maths.html#wheel-speed-from-motion">Wheel Speed from Motion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://pythonhosted.org/triangula/maths.html#motion-from-wheel-speeds">Motion from Wheel Speeds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="https://pythonhosted.org/triangula/maths.html#pose-change-from-motion">Pose change from Motion</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="https://pythonhosted.org/triangula/index.html">Triangula</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="https://pythonhosted.org/triangula/index.html">Docs</a> »</li>
+      
+    <li>Configuring Playstation 3 Controllers</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="configuring-playstation-3-controllers">
+<h1>Configuring Playstation 3 Controllers<a class="headerlink" href="#configuring-playstation-3-controllers" title="Permalink to this headline">¶</a></h1>
+<p>If you’re building a robot you will at some point probably want a way to manually drive it around. The Playstation3
+controller, also known as the SixAxis, makes for a great option - it connects over bluetooth, has a bundle of different
+buttons, sticks and motion sensors, and is readily available. You’ll probably google for how to make it work with the
+Raspberry Pi and then, if your experience is anything like mine, you’ll find that every single online guide is a) a copy
+of one original document and b) doesn’t work. Having solved all these problems, I thought I’d be nice and write the
+method down here in the hope that no-one else has to waste the time I’ve just spent on it...</p>
+<div class="section" id="a-note-on-pairing">
+<h2>A note on pairing<a class="headerlink" href="#a-note-on-pairing" title="Permalink to this headline">¶</a></h2>
+<p>One of the reasons the SixAxis isn’t as easy as it could be to use is how pairing works. Normal bluetooth devices will
+establish a link between the device and the host once, then the host can initiate connection using this previously
+stored information. In the case of the SixAxis, it’s actually the controller that initiates the process, so we have to
+do some setup beforehand. We need to tell the controller to which bluetooth host it should attempt to connect, and we
+need to tell the host (the Pi) that it should allow the controller’s connection.</p>
+</div>
+<div class="section" id="hardware">
+<h2>Hardware<a class="headerlink" href="#hardware" title="Permalink to this headline">¶</a></h2>
+<p>This guide assumes you’re using a Raspberry Pi (I’m using a Pi 2, but there’s no reason this wouldn’t work with older
+ones). You’ll also need a USB bluetooth dongle and, obviously, a SixAxis controller. I’ve only tried this with genuine
+Sony ones, many of the cheaper ones you’ll find online are clones, they should work but YMMV.</p>
+<div class="section" id="bluetooth-dongles">
+<h3>Bluetooth dongles<a class="headerlink" href="#bluetooth-dongles" title="Permalink to this headline">¶</a></h3>
+<p>Some people are finding this guide does not work. I suspect this is down to the bluetooth dongle, having eliminated
+everything else in the process. The one I’m using is an Asus USB-BT400, it’s tiny and supports all the current Bluetooth
+standards. If you get this to work with a different dongle can you let me know on twitter at @approx_eng_ and I’ll add
+it to this list:</p>
+<ul class="simple">
+<li>Asus USB-BT400</li>
+</ul>
+</div>
+</div>
+<div class="section" id="software">
+<h2>Software<a class="headerlink" href="#software" title="Permalink to this headline">¶</a></h2>
+<p>Note 1 - this assumes you’ve set up git and installed a public key with github, you don’t have to do this but you’ll
+need to modify some of the git commands below if you haven’t. You can set up public keys using the instructions at
+<a class="reference external" href="https://help.github.com/articles/generating-ssh-keys/#platform-all">https://help.github.com/articles/generating-ssh-keys/#platform-all</a></p>
+<p>Note 2 - this is also assuming you’re starting from a clean installation of the latest Jessie based Raspbian. Other
+distributions may need varying combinations of dev libraries etc. For testing I was using the minimal installation with
+filename <code class="docutils literal"><span class="pre">2015-11-21-raspbian-jessie-lite.zip</span></code> but these instructions should apply to any recent version. As always,
+it’s not a bad idea to run <code class="docutils literal"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">update</span></code> and <code class="docutils literal"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">upgrade</span></code> to get any changes to packages since
+your distribution was built.</p>
+<p>You’ll need to install some packages on your Pi first, and enable the bluetooth services:</p>
+<div class="highlight-bash"><div class="highlight"><pre>pi@raspberrypi ~ <span class="nv">$ </span>sudo apt-get install bluetooth libbluetooth3 libusb-dev
+pi@raspberrypi ~ <span class="nv">$ </span>sudo systemctl <span class="nb">enable </span>bluetooth.service
+</pre></div>
+</div>
+<p>You also need to add the default user to the <code class="docutils literal"><span class="pre">bluetooth</span></code> group:</p>
+<div class="highlight-bash"><div class="highlight"><pre>pi@raspberrypi ~ <span class="nv">$ </span>sudo usermod -G bluetooth -a pi
+</pre></div>
+</div>
+<p>You must now <strong>power cycle</strong> your Pi. Do not just reboot, actually shut down, pull the power, wait a few seconds and
+reconnect. This may be overkill, but it’s been the best way I’ve found to consistently have the next steps succeed.</p>
+</div>
+<div class="section" id="pairing">
+<h2>Pairing<a class="headerlink" href="#pairing" title="Permalink to this headline">¶</a></h2>
+<p>Get and build the command line pairing tool:</p>
+<div class="highlight-bash"><div class="highlight"><pre>pi@raspberrypi ~ <span class="nv">$ </span>wget http://www.pabr.org/sixlinux/sixpair.c
+pi@raspberrypi ~ <span class="nv">$ </span>gcc -o sixpair sixpair.c -lusb
+</pre></div>
+</div>
+<p>Firstly we need to tell the controller the address of the bluetooth dongle. To do this you need to connect the
+controller to your Pi with a mini-USB cable. Also make sure your Pi is powered from an external supply - the extra
+power needed when you connect the controllers can be too much for a laptop USB socket and you’ll get random errors or
+the process won’t work at all. The ‘sixpair’ command, run as root, updates the controller’s bluetooth master address:</p>
+<div class="highlight-bash"><div class="highlight"><pre>pi@raspberrypi ~ <span class="nv">$ </span>sudo ./sixpair
+Current Bluetooth master: 5c:f3:70:66:5c:e2
+Setting master bd_addr to 5c:f3:70:66:5c:e2
+</pre></div>
+</div>
+<p>You should see a message indicating that the bluetooth master address on the controller has been changed (you can
+specify the address to which it should change, the default with no arguments is to use the first installed bluetooth
+adapter, which is what you want unless for some reason you’ve got more than one plugged in). The controller will now
+attempt to connect to your bluetooth dongle when you press the PS button (don’t do this just yet, it won’t work). The
+example above shows that no change has been made, as this particular controller had been paired with the dongle before,
+but you should see two different addresses - the first is the address the controller was trusting, the second is the one
+it now trusts.</p>
+<p>Next we need to configure the bluetooth software on the Pi to accept connections from the controller.</p>
+<p>Disconnect your controller from the USB port, and run the ‘bluetoothctl’ command as a regular user (you don’t need to
+be root for this):</p>
+<div class="highlight-bash"><div class="highlight"><pre>pi@raspberrypi ~ <span class="nv">$ </span>bluetoothctl
+<span class="o">[</span>NEW<span class="o">]</span> Controller 5C:F3:70:66:5C:E2 raspberrypi <span class="o">[</span>default<span class="o">]</span>
+... <span class="o">(</span>other messages may appear here <span class="k">if</span> you have other bluetooth hardware<span class="o">)</span>
+</pre></div>
+</div>
+<p>Now re-connect your controller with the mini-USB cable. You should see messages in the terminal indicating that
+something has connected (but don’t worry if you don’t, as long as something useful appears in the next step!)</p>
+<p>Type ‘devices’ in the terminal. You will see a list of possible devices, including at least your SixAxis controller.
+You need to take note of the MAC address of the controller for the next step:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="o">[</span>bluetooth<span class="o">]</span><span class="c"># devices</span>
+Device 60:38:0E:CC:OC:E3 PLAYSTATION<span class="o">(</span>R<span class="o">)</span><span class="m">3</span> Controller
+... <span class="o">(</span>other devices may appear here<span class="o">)</span>
+</pre></div>
+</div>
+<p>Type ‘agent on’ and then ‘trust MAC’, replacing MAC with the MAC address you noted in the previous step (they won’t
+be the same as mine!). Quit the tool once you’re done.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="o">[</span>bluetooth<span class="o">]</span><span class="c"># agent on</span>
+Agent registered
+<span class="o">[</span>bluetooth<span class="o">]</span><span class="c"># trust 60:38:0E:CC:0C:E3</span>
+<span class="o">[</span>CHG<span class="o">]</span> Device 60:38:0E:CC:0C:E3 Trusted: yes
+Changing 60:38:0E:CC:0C:E3 trust succeeded
+<span class="o">[</span>bluetooth<span class="o">]</span><span class="c"># quit</span>
+Agent unregistered
+<span class="o">[</span>DEL<span class="o">]</span> Controller 5C:F3:70:66:5C:E2
+</pre></div>
+</div>
+<p>Disconnect your controller, you should now be able to connect wirelessly. To check this, first list everything in
+/dev/input:</p>
+<div class="highlight-bash"><div class="highlight"><pre>pi@raspberrypi ~ <span class="nv">$ </span>ls /dev/input
+by-id  by-path  event0  event1  event2  event3  event5  mice  mouse0
+</pre></div>
+</div>
+<p>Now press the PS button, the lights on the front of the controller should flash for a couple of seconds then stop,
+leaving a single light on. If you now look again at the contents of /dev/input you should see a new device, probably
+called something like ‘js0’:</p>
+<div class="highlight-bash"><div class="highlight"><pre>pi@raspberrypi ~ <span class="nv">$ </span>ls /dev/input
+by-id    event0  event2  event4  js0   mouse0
+by-path  event1  event3  event5  mice
+</pre></div>
+</div>
+<p>If a new device has appeared here then congratulations, you have successfully paired your
+dongle and SixAxis controller. This will persist across reboots, so from now on you can just connect by pressing the PS
+button on the controller. Pressing and holding this button will shut the controller down - at the moment there’s no
+timeout so be sure to turn the controller off when you’re not going to be using it for a while.</p>
+</div>
+<div class="section" id="accessing-the-sixaxis-from-python">
+<h2>Accessing the SixAxis from Python<a class="headerlink" href="#accessing-the-sixaxis-from-python" title="Permalink to this headline">¶</a></h2>
+<p>You now have a joystick device in /dev/input, but how do you use it in your Python code?</p>
+<p>There are two different approaches I’ve tried. You can use PyGame - this has the advantage that you might be using it
+already (in which case it’s the simplest solution) and it’s already installed in the system Python on your Pi. It has
+the drawback though that it requires a display - while I’m aware there are workarounds for this they’re not really
+very satisfactory. The second option is to use the Python bindings for evdev - this is lightweight, but has drawback
+of being more complex to use and only working on linux, even if you’re on a unix-like system such as OSX you can’t use
+it whereas PyGame is generally suitable for cross-platform use. Because I only want to run this on the Pi and because I
+really need it to work cleanly in a headless environment I’ve gone with evdev, but there are arguments for both.</p>
+<p>Actually using evdev isn’t trivial, the best documentation I have is the code I wrote to handle it. I’ve created a
+Python class <a class="reference internal" href="https://pythonhosted.org/triangula/api/input.html#triangula.input.SixAxis" title="triangula.input.SixAxis"><code class="xref py py-class docutils literal"><span class="pre">triangula.input.SixAxis</span></code></a> and corresponding resource <a class="reference internal" href="https://pythonhosted.org/triangula/api/input.html#triangula.input.SixAxisResource" title="triangula.input.SixAxisResource"><code class="xref py py-class docutils literal"><span class="pre">triangula.input.SixAxisResource</span></code></a> to
+make this simpler to work with. The class uses asyncore to poll the evdev device, updating internal state within the
+object. It also allows you to register button handlers which will be called, handles centering, hot zones (regions in
+the axis range which clamp to 1.0 or -1.0) and dead zones (regions near the centre point which clamp to 0.0).</p>
+<p>By way of an example, the following code will connect to the controller (you’ll get an exception if you don’t have one
+connected) and print out the values of the two analogue sticks:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">triangula.input</span> <span class="kn">import</span> <span class="n">SixAxis</span><span class="p">,</span> <span class="n">SixAxisResource</span>
+
+<span class="c"># Button handler, will be bound to the square button later</span>
+<span class="k">def</span> <span class="nf">handler</span><span class="p">(</span><span class="n">button</span><span class="p">):</span>
+  <span class="k">print</span> <span class="s">'Button {} pressed'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">button</span><span class="p">)</span>
+
+<span class="c"># Get a joystick, this will fail unless the SixAxis controller is paired and active</span>
+<span class="c"># The bind_defaults argument specifies that we should bind actions to the SELECT and START buttons to</span>
+<span class="c"># centre the controller and reset the calibration respectively.</span>
+<span class="k">with</span> <span class="n">SixAxisResource</span><span class="p">(</span><span class="n">bind_defaults</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">joystick</span><span class="p">:</span>
+    <span class="c"># Register a button handler for the square button</span>
+    <span class="n">joystick</span><span class="o">.</span><span class="n">register_button_handler</span><span class="p">(</span><span class="n">handler</span><span class="p">,</span> <span class="n">SixAxis</span><span class="o">.</span><span class="n">BUTTON_SQUARE</span><span class="p">)</span>
+    <span class="k">while</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="c"># Read the x and y axes of the left hand stick, the right hand stick has axes 2 and 3</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">joystick</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">corrected_value</span><span class="p">()</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">joystick</span><span class="o">.</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">corrected_value</span><span class="p">()</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You’re welcome to pick up Triangula’s libraries, they’re uploaded to PyPi semi-regularly (get with ‘pip install
+triangula’) or from github. In either case you’ll need to install one extra package first, without which the evdev
+module won’t build:</p>
+<div class="highlight-bash"><div class="highlight"><pre>pi@raspberrypi ~ <span class="nv">$ </span>sudo apt-get install libpython2.7-dev
+</pre></div>
+</div>
+<p>Now you can get Triangula’s code from github and build it to acquire the triangula.input module, you can then use this
+in your own code (there’s nothing particularly specific to Triangula in it)</p>
+<div class="highlight-bash"><div class="highlight"><pre>pi@raspberrypi ~ <span class="nv">$ </span>git clone git@github.com:basebot/triangula.git
+pi@raspberrypi ~ <span class="nv">$ </span><span class="nb">cd </span>triangula/src/python
+pi@raspberrypi ~/triangula/src/python python setup.py develop
+</pre></div>
+</div>
+<p>This will set up the libraries in develop mode, creating symbolic links into your python installation (I’m assuming here
+that you’re using a virtual environment, because you should be - if you’re not you’ll need to run some of these
+commands as root)</p>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="https://pythonhosted.org/triangula/api.html" class="btn btn-neutral float-right" title="API Documentation" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="https://pythonhosted.org/triangula/config.html" class="btn btn-neutral" title="Raspberry Pi Configuration" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr>
+
+  <div role="contentinfo">
+    <p>
+        © Copyright 2015, Tom Oinn.
+      Last updated on Aug 04, 2016.
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org/">Read the Docs</a>.
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.3.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="Configuring%20Playstation%203%20Controllers%20%E2%80%94%20Triangula%200.3.1%20documentation_files/jquery.js"></script>
+      <script type="text/javascript" src="Configuring%20Playstation%203%20Controllers%20%E2%80%94%20Triangula%200.3.1%20documentation_files/underscore.js"></script>
+      <script type="text/javascript" src="Configuring%20Playstation%203%20Controllers%20%E2%80%94%20Triangula%200.3.1%20documentation_files/doctools.js"></script>
+      <script src="Configuring%20Playstation%203%20Controllers%20%E2%80%94%20Triangula%200.3.1%20documentation_files/MathJax.js" id=""></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="Configuring%20Playstation%203%20Controllers%20%E2%80%94%20Triangula%200.3.1%20documentation_files/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+
+</body></html>
